@@ -5,10 +5,9 @@ on:
 
 jobs:
   a:
-    if: false
     runs-on: ubuntu-latest
     steps:
-      - run: echo a
+      - run: sleep 30
 
   b:
     runs-on: ubuntu-latest
