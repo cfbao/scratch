@@ -1,0 +1,22 @@
+name: test
+
+on: push
+
+jobs:
+  a:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0
+
+  b:
+    if: false
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo x
+
+  c:
+    needs: [a, b]
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - run: echo ha
