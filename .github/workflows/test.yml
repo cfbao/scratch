@@ -3,20 +3,14 @@ name: test
 on: push
 
 jobs:
-  a:
-    runs-on: ubuntu-latest
-    steps:
-      - run: exit 0
+  call:
+    uses: ./.github/workflows/callable.yml
 
-  b:
-    if: false
+  dependent:
+    needs: call
     runs-on: ubuntu-latest
+    env:
+      CALL_JSON: ${{ toJson(needs.call) }}
     steps:
-      - run: echo x
-
-  c:
-    needs: [a, b]
-    runs-on: ubuntu-latest
-    if: failure()
-    steps:
-      - run: echo ha
+      - run: |
+          echo "${CALL_JSON}"
