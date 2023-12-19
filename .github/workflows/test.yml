@@ -17,6 +17,6 @@ jobs:
   c:
     needs: [a, b]
     runs-on: ubuntu-latest
-    if: success()
+    if: cancelled()
     steps:
       - run: echo ha
