@@ -3,7 +3,13 @@ name: test
 on: push
 
 jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 1
+
   call:
+    needs: init
     uses: ./.github/workflows/callable.yml
 
   dependent:

@@ -5,13 +5,11 @@ on:
 
 jobs:
   a:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - run: sleep 30
 
   b:
-    if: false
     runs-on: ubuntu-latest
     steps:
       - run: echo b
