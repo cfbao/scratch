@@ -15,7 +15,7 @@ jobs:
         env:
           E: ${{ matrix.e }}
         run: |
-          if [ "${E}" -eq 'b' ]; then
+          if [ "${E}" = 'b' ]; then
             echo "foo=bar" >> "$GITHUB_OUTPUT"
           fi
 
