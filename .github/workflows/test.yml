@@ -3,21 +3,27 @@ name: test
 on: push
 
 jobs:
-  init:
+  m:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        e: [a, b, c]
+    outputs:
+      foo: ${{ steps.o.outputs.foo }}
+    steps:
+      - id: o
+        env:
+          E: ${{ matrix.e }}
+        run: |
+          if [ "${E}" -eq 'b' ]; then
+            echo "foo=bar" >> "$GITHUB_OUTPUT"
+          fi
+
+  d:
+    needs: m
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1
-
-  call:
-    needs: init
-    uses: ./.github/workflows/callable.yml
-
-  dependent:
-    if: always()
-    needs: call
-    runs-on: ubuntu-latest
-    env:
-      CALL_JSON: ${{ toJson(needs.call) }}
-    steps:
-      - run: |
-          echo "${CALL_JSON}"
+      - env:
+          FOO: ${{ needs.m.outputs.foo }}
+        run: |
+          echo "${FOO}"
