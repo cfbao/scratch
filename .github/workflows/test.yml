@@ -4,26 +4,7 @@ on: push
 
 jobs:
   m:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        e: [a, b, c]
-    outputs:
-      foo: ${{ steps.o.outputs.foo }}
-    steps:
-      - id: o
-        env:
-          E: ${{ matrix.e }}
-        run: |
-          if [ "${E}" = 'b' ]; then
-            echo "foo=bar" >> "$GITHUB_OUTPUT"
-          fi
-
-  d:
-    needs: m
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          FOO: ${{ needs.m.outputs.foo }}
-        run: |
-          echo "${FOO}"
+        e: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+    uses: ./.github/workflows/callable.yml
