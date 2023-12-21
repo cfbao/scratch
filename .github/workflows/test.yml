@@ -3,8 +3,63 @@ name: test
 on: push
 
 jobs:
-  m:
-    strategy:
-      matrix:
-        e: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
-    uses: ./.github/workflows/callable.yml
+  m1:
+    uses: ./.github/workflows/callable1.yml
+  m2:
+    uses: ./.github/workflows/callable2.yml
+  m3:
+    uses: ./.github/workflows/callable3.yml
+  m4:
+    uses: ./.github/workflows/callable4.yml
+  m5:
+    uses: ./.github/workflows/callable5.yml
+  m6:
+    uses: ./.github/workflows/callable6.yml
+  m7:
+    uses: ./.github/workflows/callable7.yml
+  m8:
+    uses: ./.github/workflows/callable8.yml
+  m9:
+    uses: ./.github/workflows/callable9.yml
+  m10:
+    uses: ./.github/workflows/callable10.yml
+  m11:
+    uses: ./.github/workflows/callable11.yml
+  m12:
+    uses: ./.github/workflows/callable12.yml
+  m13:
+    uses: ./.github/workflows/callable13.yml
+  m14:
+    uses: ./.github/workflows/callable14.yml
+  m15:
+    uses: ./.github/workflows/callable15.yml
+  m16:
+    uses: ./.github/workflows/callable16.yml
+  m17:
+    uses: ./.github/workflows/callable17.yml
+  m18:
+    uses: ./.github/workflows/callable18.yml
+  m19:
+    uses: ./.github/workflows/callable19.yml
+  m20:
+    uses: ./.github/workflows/callable20.yml
+  m21:
+    uses: ./.github/workflows/callable21.yml
+  m22:
+    uses: ./.github/workflows/callable22.yml
+  m23:
+    uses: ./.github/workflows/callable23.yml
+  m24:
+    uses: ./.github/workflows/callable24.yml
+  m25:
+    uses: ./.github/workflows/callable25.yml
+  m26:
+    uses: ./.github/workflows/callable26.yml
+  m27:
+    uses: ./.github/workflows/callable27.yml
+  m28:
+    uses: ./.github/workflows/callable28.yml
+  m29:
+    uses: ./.github/workflows/callable29.yml
+  m30:
+    uses: ./.github/workflows/callable30.yml
