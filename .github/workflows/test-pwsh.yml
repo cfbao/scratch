@@ -1,0 +1,8 @@
+on: push
+
+jobs:
+  test-pwsh:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: pwsh
+        run: $PSVersionTable
